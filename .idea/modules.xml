@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../cardsui-for-android-master/CardsUILib/CardsUILib.iml" filepath="$PROJECT_DIR$/../cardsui-for-android-master/CardsUILib/CardsUILib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ProgressWheel-master/ProgressWheel-master.iml" filepath="$PROJECT_DIR$/../ProgressWheel-master/ProgressWheel-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragments.iml" filepath="$PROJECT_DIR$/fragments.iml" />
+    </modules>
+  </component>
+</project>
+

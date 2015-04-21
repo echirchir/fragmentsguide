@@ -1,0 +1,58 @@
+<hr />
+
+<code style="font-size: 15px; color: blue">
+    public class NewsActivity extends Activity<br/>&nbsp;&nbsp;implements OnNewsItemSelectedListener
+    {<br>
+    &nbsp;&nbsp;private HeadLinesFragment headLines;<br/>
+    &nbsp;&nbsp;private Fragment fragment;<br/>
+    &nbsp;&nbsp;private FragmentManager fragmentManager;<br/>
+    &nbsp;&nbsp;private FragmentTransaction transaction;<br/><br/>
+    &nbsp;&nbsp;@Override<br>
+    &nbsp;&nbsp;public void onCreate(Bundle state)
+    &nbsp;{<br />
+    &nbsp;&nbsp;&nbsp;super.onCreate(state); <br/>
+    &nbsp;&nbsp;&nbsp;setContentView(R.layout.main);<br><br>
+    &nbsp;&nbsp;&nbsp;headLines = new HeadLinesFragment();<br>
+    &nbsp;&nbsp;&nbsp;setFragment(headLines, "headLines");<br>
+    &nbsp;&nbsp;}<br />
+
+    <br>
+
+    &nbsp;&nbsp;/*Utility method to set fragments*/<br>
+    &nbsp;&nbsp;public void setFragment(Fragment frag, String tag)
+    &nbsp;&nbsp;{<br><br>
+    &nbsp;&nbsp;&nbsp;fragmentManager = getFragmentManager();<br>
+    &nbsp;&nbsp;&nbsp;transaction = fragmentManager.beginTransaction();<br>
+
+    &nbsp;&nbsp;&nbsp;fragment = fragmentManager.findFragmentById(R.id.container);<br><br>
+    &nbsp;&nbsp;&nbsp;if(fragment == null)<br>
+    &nbsp;&nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;ft.add(R.id.container, frag, tag);<br>
+    &nbsp;&nbsp;&nbsp;}else{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;ft.replace(R.id.container, frag, tag);<br>
+    &nbsp;&nbsp;&nbsp;}<br><br>
+    &nbsp;&nbsp;&nbsp;ft.addToBackStack(null);<br>
+    &nbsp;&nbsp;&nbsp;ft.commit();<br>
+
+    &nbsp;&nbsp;}<br><br>
+
+    &nbsp;&nbsp;@Override<br>
+    &nbsp;&nbsp;public void onItemSelected(int position)<br>
+    &nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;fragmentTwo = new FragmentTwo();<br />
+    &nbsp;&nbsp;&nbsp;setFragment(fragmentTwo, "fragmentTwo);<br />
+    &nbsp;&nbsp;&nbsp;fragmentTwo.updateDetails( position );<br />
+    &nbsp;&nbsp;}<br><br>
+
+    &nbsp;&nbsp;@Override<br>
+    &nbsp;&nbsp;public void onResume()<br>
+    &nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;super.onResume();<br />
+    &nbsp;&nbsp;}<br>
+
+    <br>
+    }
+</code>
+<hr>
+<p></p>
+

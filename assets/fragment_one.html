@@ -1,0 +1,43 @@
+
+<hr />
+
+<code style="font-size: 13px; color: blue">
+    public class FragmentOne extends Fragment <br>&nbsp;&nbsp;implements AdapterView.OnItemClickListener
+    {<br><br>
+    &nbsp;&nbsp;private OnNewsItemSelectedListener listener;<br>
+    &nbsp;&nbsp;private HeadLinesAdapter adapter;<br>
+    &nbsp;&nbsp;private Activity mActivity;<br><br>
+    &nbsp;&nbsp;@Override<br>
+    &nbsp;&nbsp;public void onAttach(Activity act)
+    &nbsp;{<br />
+    &nbsp;&nbsp;&nbsp;super.onAttach(act); <br/>
+    &nbsp;&nbsp;&nbsp;this.mActivity = act; <br/>
+    &nbsp;&nbsp;&nbsp;try{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;listener = (OnNewsItemSelectedListener)act; <br/>
+    &nbsp;&nbsp;&nbsp;}
+    &nbsp;&nbsp;catch(ClassCastException e){}<br>
+    &nbsp;&nbsp;}<br><br>
+
+    &nbsp;&nbsp;@Override<br>
+    &nbsp;&nbsp;public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state)<br>
+    &nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;View view = inflater.inflate(R.layout.news_head_lines, container, false);<br><br>
+
+    &nbsp;&nbsp;&nbsp;ListView headLines = (ListView)view.findViewById(R.id.head_lines);<br>
+    &nbsp;&nbsp;&nbsp;adapter = new HeadLinesAdapter(mActivity, R.layout.head_line, headLinesArray);<br><br>
+    &nbsp;&nbsp;&nbsp;headLines.setAdapter(adapter);<br>
+    &nbsp;&nbsp;&nbsp;headLines.setOnItemClickListener(this);<br><br>
+
+    &nbsp;&nbsp;&nbsp;return view;<br>
+    &nbsp;&nbsp;}<br><br>
+
+    &nbsp;&nbsp;@Override<br>
+    &nbsp;&nbsp;public void onItemClick(AdapterView<?> parent, View view, int position, long id)&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;<span style="color: black;">/*Call the interface method & pass position*/</span><br>
+    &nbsp;&nbsp;&nbsp;listener.onItemSelected( position );<br>
+
+    &nbsp;&nbsp;}<br><br>
+
+    }
+</code>
+<hr>

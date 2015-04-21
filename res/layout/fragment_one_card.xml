@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@android:color/darker_gray">
+
+    <WebView
+            android:id="@+id/fragment_one_code"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".9"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:padding="10sp"/>
+
+    <com.fima.cardsui.views.CardUI
+            android:id="@+id/fragment_one_bottom"
+            android:layout_width="match_parent"
+            android:layout_weight="0.1"
+            android:layout_height="0dp" />
+
+</LinearLayout>

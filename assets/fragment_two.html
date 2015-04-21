@@ -1,0 +1,29 @@
+<hr />
+
+<code style="font-size: 13px; color: blue">
+    public class FragmentTwo extends Fragment <br>
+    {<br><br>
+
+    &nbsp;&nbsp;private TextView details;<br><br>
+
+    &nbsp;&nbsp;@Override<br>
+    &nbsp;&nbsp;public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state)<br>
+    &nbsp;&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;View view = inflater.inflate(R.layout.item_details, container, false);<br><br>
+
+    &nbsp;&nbsp;&nbsp;details = (TextView)view.findViewById(R.id.details);<br>
+
+    &nbsp;&nbsp;&nbsp;return view;<br>
+    &nbsp;&nbsp;}<br><br>
+
+    &nbsp;&nbsp;public void updateDetails(int position)&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;<span style="color: black;">/*update text view here*/</span><br>
+
+    &nbsp;&nbsp;&nbsp;String newsDetails = "SELECT details FROM newsfeed WHERE id = position";<br>
+    &nbsp;&nbsp;&nbsp;details.setText( newsDetails );<br>
+
+    &nbsp;&nbsp;}<br><br>
+
+    }
+</code>
+<hr>

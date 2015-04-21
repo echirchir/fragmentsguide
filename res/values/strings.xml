@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fragments Ultimate</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item >Home</item>
+        <item >Definition</item>
+        <item >Activity</item>
+        <item >Fragment 1</item>
+        <item >Interface</item>
+        <item >Fragment 2</item>
+        <item >Conclusion</item>
+        <item >Play</item>
+        <item >Feedback</item>
+    </string-array>
+
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_home</item>
+        <item>@drawable/check</item>
+    </array>
+    
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+    <string name="intro">
+        In many android apps that use fragments to create smoother user experiences, communication between fragments and
+        activities is unavoidable. After getting a lot of questions
+        on this subject, I figured I could solve the problem once and for all by creating a downloadable app.
+    </string>
+
+    <string name="frag_definition_top">
+        A Fragment is a piece of an application\'s user interface or behavior that can be placed in an Activity.
+        Interaction with fragments is done through FragmentManager which can be obtained via Activity.getFragmentManager() and Fragment.getFragmentManager().
+    </string>
+
+    <string name="frag_definition_center">
+        This app will show you how to communicate between fragments and activities in your application.
+    </string>
+
+    <string name="frag_definition_bottom">
+        Using the communicator design pattern, we develop classes that know little to nothing about one another. In object oriented paradigm,
+        it is referred to as loose coupling. You always want to eliminate or reduce how much information one class knows about another. That also reduces dependency respectively.
+    </string>
+
+    <string name="frag_definition_last">
+        You can easily find more information on Android Fragments online once you are done reading the content of this app.
+    </string>
+
+    <string name="fragment_one_top">
+        FragmentOne is like any other fragment. It displays a list view that contains news headlines. To handle click events, it implements the OnItemClickListener interface
+        and then overrides the onItemClick method. It also uses an adapter to supply the head lines. When a user clicks one of the headlines, we call our interface method
+        to notify the activity of the event and pass back the integer position of the clicked item. This is important because FragmentTwo will use that value to query
+        the database for the correct news article. That is all for this fragment.
+    </string>
+
+    <string name="fragment_one_bottom">
+
+          Once you feel comfortable with this fragment, you can move to the next item: Interfaces. Our interface has only one method.
+          public void onItemSelected(int position) that takes an integer value as its argument.
+
+    </string>
+
+    <string name="fragment_one_last">
+        Remember that this typeMUST match the type expected by this same method inside the activity. It must also match the type expected by the
+        method in FragmentTwo as we shall see.
+    </string>
+
+    <string name="activity_explanation">
+        Inside onCreate, this activity adds the fragment that contains a list of news headlines. It does that using the Fragment Manager obtained inside setFragment
+        method that I wrote. It also implements our interface and overrides onItemSelected(int position) method. When a user selects a news item, this method is called
+        and the activity is notified - which then notifies the second fragment by calling its method inside this method. Make sense?
+    </string>
+
+    <string name="interface_explanation">
+        Interfaces in java are both public and abstract by default. That means you do not need to explicitly declare them as such. That is also true for their methods.
+        Methods in an interface do not have bodies - that gives the responsibility of defining the method body to whoever implements the interface.
+    </string>
+
+    <string name="interface_bottom">
+        Once you have a clear understanding of this interface, you can now go back to the activity and see how we implemented it and overrode its method onItemSelected()
+    </string>
+
+    <string name="fragment_two_explanation">
+        In this fragment, when we call updateDetails(int position) and pass the headline position, we can get the details (or body) of that headline
+        from a table and automatically show the text in our text view. It is that simple.
+    </string>
+
+    <string name="enjoy">
+        Enjoy!!
+    </string>
+
+    <string name="conclusion_header">
+        In Summary, using an interface to facilitate communication between fragments and activities reduces coupling of classes. That means
+        classes know very little to nothing about others. You can then use your fragments anywhere you want without having to change anything anywhere else.
+
+    </string>
+
+    <string name="conclusion_footer">
+        I hope this app helped you learn about fragments and how to communicate between them through the communicator design pattern without directly talking to each other.
+    </string>
+
+    <string name="item">Create Activity</string>
+
+    <string name="tutorial_summary">
+        Thank you for downloading Fragments Ultimate Guide. I hope you enjoy reading it or in this case, listening to it.
+        In modern android apps, the use of fragments is common. I therefore created this app to help you communicate between activities and fragments.
+
+        In order to communicate between fragments and activities, you need the following components: an activity, one or more fragments and lastly. an interface.
+
+        After creating your main activity, create your first fragment. A good example would be a news headline fragment with a list of headlines. Users should be
+        able to click or select one of the headlines if they want to read more about it.
+
+        Inside that news headlines fragment, you would implement an On Click Listener and override an on Click method.
+
+        Before I tell you what to do inside that onClick method, let us create an interface that will help us communicate between our first fragment and our activity.
+
+        It will act as a middleman of sorts, if I must say.
+
+        Let us name our interface On News Item Selected Listener and inside it, let us create an abstract method called on Item Selected that takes an integer position and returns nothing.
+
+        Are you still following? You see, I have no way of knowing but I hope you are still with me because I am almost done here.
+
+        Now let us go back to our first fragment that we talked about a few seconds ago.
+
+        First, create a class-level instance of our interface. Call it whatever you want. I called mine listener. Next, inside on attach method, assign a value to it by casting it to
+        the activity argument that you get by overriding on Attach. That would be like listener equals open parenthesis On Item Selected Listener close parenthesis activity then semi-colon.
+
+        I hope that made sense. Now let us move on to the next part.
+
+        Inside onClick method of your fragment (you got it by implementing an on Click Listener), call the on Item Selected method on the listener instance. That would
+        sound like listener dot on Item Selected and pass it an integer.
+
+        Calling on Item Selected method on the interface will notify the activity. How? That is a good question and the answer is your next task. In your main activity, you must
+        implement our On Item Selected Listener and override its method (on item selected).
+
+        Wasn\'t that easy to do? Do not worry if some of these do not make any sense. After reading more, you will be killing it and looking awesome all over town.
+
+        Least but not last, inside the on item selected method in your activity, you can then call another method to notify another fragment of the event.
+
+        Going a long with our news headlines example, when a user selects a headline, you would expect them to see a full article. We could then create a second fragment
+        called Details Fragment. Within that fragment, create a method that takes an integer argument.
+
+        That integer will be passed to it by the activity once it receives the item position from the fragment through the interface. Do you see a pattern here? If not, here is the
+        pattern I am talking about.
+
+        First, the argument type you pass to the interface method inside your first fragment should be the same as the argument type in that same method inside the activity
+        and finally the argument expected by the second fragment\'s method.
+
+        Once the second fragment has received the position of the article, it can easily query the database for the full article and display it in view. Awesome sauce.
+
+        As I finish, I would like to mention that this session emphasized the concept of loose coupling in object oriented programming. For instance, our second fragment
+        knows nothing about our first fragment. That means we can reuse our fragment without breaking anything.
+
+        You can read more about this subject as simple developer dot com.
+
+        In the memorable words of Forrest Gump, "that\'s all I have to say about that".
+
+    </string>
+
+
+    <string name="send_email">
+        Send
+    </string>
+    <string name="subject_hint">
+        Subject
+    </string>
+    <string name="message_hint">
+        Message
+    </string>
+    <string name="cancel">
+        Cancel
+    </string>
+
+    <string name="text_to_speech_error">
+        Unable to use Text-To-Speech in your device. Try again!
+    </string>
+
+</resources>

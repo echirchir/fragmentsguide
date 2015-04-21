@@ -1,0 +1,23 @@
+<h2 style="text-align: center">Summary</h2>
+<p style="font-size: 16px;">
+    Below are the steps followed when communicating between fragments and activities:
+</p>
+
+<ul>
+    <li>Create Your Main Activity</li>
+    <li>Create Your Fragment(s)</li>
+    <li>Create Your Interface with method(s)</li>
+    <li>Implement Your Interface in Your Activity</li>
+    <li>Override Your Interface's method in your Activity</li>
+    <li>In One of your fragments, create an instance of your interface by casting your activity to it; inside onAttach()</li>
+    <li>When ready to notify the activity, call the interface method passing the required arguments.</li>
+    <li>Inside your activity, find your next fragment using the fragment manager.</li>
+    <li>If your second fragment does not have a method, create one.</li>
+    <li>Inside your activity, in the interface method you overrode, call the second fragment's method to notify it of changes</li>
+    <li>In fragment two's method, make the changes that the user expected to see.</li>
+</ul>
+
+<p>In <span style="color: blue">Summary</span>, using an interface to facilitate communication between fragments and activities reduces coupling of classes. That means
+classes know very little to nothing about others. You can then use your fragments anywhere you want without having to change anything anywhere else.</p>
+
+<p><i>I hope this app helped you learn about fragments and how to communicate between them through the communicator design pattern without directly talking to each other.</i></p>
